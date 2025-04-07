@@ -44,7 +44,7 @@ PaymentProcessingDemo/
     └── ...
 ```
 
-## ✅ What You'll Learn
+## ✅ Learn
 
 - How to use **Abstract Factory** to manage related service families
 - How to write **extensible** and **loosely-coupled** code
