@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa" />
+  
+  <!-- Main Node: Abstract Factory Pattern -->
+  <circle cx="600" cy="120" r="100" fill="#4682B4" />
+  <text x="600" y="125" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Abstract Factory Pattern</text>
+  
+  <!-- Connection lines from main node -->
+  <line x1="600" y1="220" x2="300" y2="300" stroke="#666" stroke-width="2" />
+  <line x1="600" y1="220" x2="600" y2="300" stroke="#666" stroke-width="2" />
+  <line x1="600" y1="220" x2="900" y2="300" stroke="#666" stroke-width="2" />
+  
+  <!-- Key Component Nodes -->
+  <!-- Abstract Factory Interface -->
+  <rect x="180" y="300" width="240" height="80" rx="10" fill="#3CB371" stroke="#2E8B57" stroke-width="2" />
+  <text x="300" y="325" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Abstract Factory</text>
+  <text x="300" y="350" font-family="Arial" font-size="14" fill="white" text-anchor="middle">IPaymentGatewayFactory</text>
+  
+  <!-- Abstract Products -->
+  <rect x="480" y="300" width="240" height="80" rx="10" fill="#6A5ACD" stroke="#483D8B" stroke-width="2" />
+  <text x="600" y="325" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Abstract Products</text>
+  <text x="600" y="350" font-family="Arial" font-size="14" fill="white" text-anchor="middle">IPaymentProcessor, IRefundHandler, ...</text>
+  
+  <!-- Client -->
+  <rect x="780" y="300" width="240" height="80" rx="10" fill="#CD5C5C" stroke="#8B3A3A" stroke-width="2" />
+  <text x="900" y="325" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Client</text>
+  <text x="900" y="350" font-family="Arial" font-size="14" fill="white" text-anchor="middle">PaymentService</text>
+  
+  <!-- Connection lines to concrete implementations -->
+  <line x1="300" y1="380" x2="300" y2="450" stroke="#666" stroke-width="2" />
+  <line x1="300" y1="380" x2="200" y2="450" stroke="#666" stroke-width="2" />
+  <line x1="300" y1="380" x2="400" y2="450" stroke="#666" stroke-width="2" />
+  
+  <line x1="600" y1="380" x2="500" y2="450" stroke="#666" stroke-width="2" />
+  <line x1="600" y1="380" x2="600" y2="450" stroke="#666" stroke-width="2" />
+  <line x1="600" y1="380" x2="700" y2="450" stroke="#666" stroke-width="2" />
+  
+  <!-- Concrete Factories -->
+  <rect x="100" y="450" width="200" height="60" rx="10" fill="#5F9EA0" stroke="#4682B4" stroke-width="2" />
+  <text x="200" y="485" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Stripe Factory</text>
+  
+  <rect x="350" y="450" width="200" height="60" rx="10" fill="#5F9EA0" stroke="#4682B4" stroke-width="2" opacity="0.6" />
+  <text x="450" y="485" font-family="Arial" font-size="14" fill="white" text-anchor="middle">PayPal Factory (Future)</text>
+  
+  <!-- Concrete Products -->
+  <rect x="400" y="530" width="400" height="200" rx="10" fill="#f5f5f5" stroke="#ddd" stroke-width="2" />
+  <text x="600" y="550" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Concrete Products</text>
+  
+  <!-- Stripe Implementations -->
+  <rect x="425" y="570" width="160" height="40" rx="5" fill="#4682B4" stroke="#4682B4" stroke-width="1" />
+  <text x="505" y="595" font-family="Arial" font-size="12" fill="white" text-anchor="middle">StripePaymentProcessor</text>
+  
+  <rect x="425" y="620" width="160" height="40" rx="5" fill="#4682B4" stroke="#4682B4" stroke-width="1" />
+  <text x="505" y="645" font-family="Arial" font-size="12" fill="white" text-anchor="middle">StripeRefundHandler</text>
+  
+  <rect x="425" y="670" width="160" height="40" rx="5" fill="#4682B4" stroke="#4682B4" stroke-width="1" />
+  <text x="505" y="695" font-family="Arial" font-size="12" fill="white" text-anchor="middle">StripeStatusChecker</text>
+  
+  <!-- PayPal Implementations (Faded to show "future") -->
+  <rect x="615" y="570" width="160" height="40" rx="5" fill="#6A5ACD" stroke="#6A5ACD" stroke-width="1" opacity="0.6" />
+  <text x="695" y="595" font-family="Arial" font-size="12" fill="white" text-anchor="middle">PayPalPaymentProcessor</text>
+  
+  <rect x="615" y="620" width="160" height="40" rx="5" fill="#6A5ACD" stroke="#6A5ACD" stroke-width="1" opacity="0.6" />
+  <text x="695" y="645" font-family="Arial" font-size="12" fill="white" text-anchor="middle">PayPalRefundHandler</text>
+  
+  <rect x="615" y="670" width="160" height="40" rx="5" fill="#6A5ACD" stroke="#6A5ACD" stroke-width="1" opacity="0.6" />
+  <text x="695" y="695" font-family="Arial" font-size="12" fill="white" text-anchor="middle">PayPalStatusChecker</text>
+  
+  <!-- Connection lines from factories to concrete products -->
+  <line x1="200" y1="510" x2="425" y2="590" stroke="#4682B4" stroke-width="1.5" stroke-dasharray="5,3" />
+  <line x1="200" y1="510" x2="425" y2="640" stroke="#4682B4" stroke-width="1.5" stroke-dasharray="5,3" />
+  <line x1="200" y1="510" x2="425" y2="690" stroke="#4682B4" stroke-width="1.5" stroke-dasharray="5,3" />
+  
+  <line x1="450" y1="510" x2="615" y2="590" stroke="#6A5ACD" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6" />
+  <line x1="450" y1="510" x2="615" y2="640" stroke="#6A5ACD" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6" />
+  <line x1="450" y1="510" x2="615" y2="690" stroke="#6A5ACD" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6" />
+  
+  <!-- Client Code Flow -->
+  <rect x="820" y="450" width="280" height="280" rx="10" fill="#f5f5f5" stroke="#ddd" stroke-width="2" />
+  <text x="960" y="470" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Client Workflow</text>
+  
+  <!-- Steps in workflow -->
+  <rect x="840" y="490" width="240" height="40" rx="5" fill="#CD5C5C" stroke="#8B3A3A" stroke-width="1" />
+  <text x="960" y="515" font-family="Arial" font-size="12" fill="white" text-anchor="middle">1. Client receives factory from Program</text>
+  
+  <rect x="840" y="540" width="240" height="40" rx="5" fill="#CD5C5C" stroke="#8B3A3A" stroke-width="1" />
+  <text x="960" y="565" font-family="Arial" font-size="12" fill="white" text-anchor="middle">2. Client creates processor/handler</text>
+  
+  <rect x="840" y="590" width="240" height="40" rx="5" fill="#CD5C5C" stroke="#8B3A3A" stroke-width="1" />
+  <text x="960" y="615" font-family="Arial" font-size="12" fill="white" text-anchor="middle">3. Client uses object without knowing</text>
+  <text x="960" y="630" font-family="Arial" font-size="12" fill="white" text-anchor="middle">concrete implementation</text>
+  
+  <rect x="840" y="640" width="240" height="70" rx="5" fill="#CD5C5C" stroke="#8B3A3A" stroke-width="1" />
+  <text x="960" y="660" font-family="Arial" font-size="12" fill="white" text-anchor="middle">4. Benefits: Isolation, Extensibility</text>
+  <text x="960" y="680" font-family="Arial" font-size="12" fill="white" text-anchor="middle">New gateways can be added without</text>
+  <text x="960" y="700" font-family="Arial" font-size="12" fill="white" text-anchor="middle">changing client code</text>
+  
+  <!-- Pattern Benefits -->
+  <rect x="180" y="730" width="840" height="50" rx="10" fill="#4682B4" stroke="#2E8B57" stroke-width="2" />
+  <text x="600" y="760" font-family="Arial" font-size="16" fill="white" text-anchor="middle">SOLID Principles: Single Responsibility, Open/Closed, Dependency Inversion</text>
+</svg>
