@@ -90,15 +90,35 @@ Choose Action: 1. Make Payment
 Enter Amount: 100.00
 [Stripe] Processing payment of $100.00
 ```
+[ApiController]
+[Route("api/payments")]
+public class PaymentController : ControllerBase
+{
+    private readonly PaymentService _service;
+    public PaymentController(IPaymentGatewayFactory factory)
+    {
+        _service = new PaymentService(factory);
+    }
+    [HttpPost("checkout")]
+    public IActionResult Checkout([FromBody] PaymentRequest request)
+    {
+        _service.MakePayment(request.Amount);
+        return Ok("Payment processed.");
+    }
+    [HttpPost("refund")]
+    public IActionResult Refund([FromBody] RefundRequest request)
+    {
+        _service.RefundPayment(request.TransactionId);
+        return Ok("Refund processed.");
+    }
+    [HttpGet("status/{transactionId}")]
+    public IActionResult Status(string transactionId)
+    {
+        _service.GetPaymentStatus(transactionId);
+        return Ok("Status checked.");
+    }
+}
 
-## 🤔 Want to Go Further?
-
-Ask yourself:
-
-- How would you persist transaction IDs?
-- What happens if a payment fails?
-- How could webhooks update order status?
-- How would customers access only their own transaction data?
 
 ## 📌 Credits
 
